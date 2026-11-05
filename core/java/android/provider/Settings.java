@@ -14855,6 +14855,20 @@ public final class Settings {
         @Readable
         public static final String PI_PHOTOS_SPOOF = "pi_photos_spoof";
 
+		/**
+         * Whether advanced app spoofing (GPU/CPU model spoofing) is enabled
+         * @hide
+         */
+        @Readable
+        public static final String ADVANCED_APP_SPOOF_ENABLED = "advanced_app_spoof_enabled";
+
+        /**
+         * JSON configuration for advanced app spoofing (package -> GPU/CPU profiles)
+         * @hide
+         */
+        @Readable
+        public static final String ADVANCED_APP_SPOOF_CONFIG = "advanced_app_spoof_config";
+
         /**
          * Whether to use spoof for snapchat
          * @hide
