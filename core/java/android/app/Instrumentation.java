@@ -81,6 +81,8 @@ import java.util.Objects;
 import java.util.StringJoiner;
 import java.util.concurrent.TimeoutException;
 
+import com.android.internal.util.evolution.AdvancedAppSpoofUtils;
+
 import com.android.internal.util.evolution.PixelPropsUtils;
 
 /**
@@ -1364,6 +1366,7 @@ public class Instrumentation {
         Application app = getFactory(context.getPackageName())
                 .instantiateApplication(cl, className);
         app.attach(context);
+        AdvancedAppSpoofUtils.setProps(context); 
         PixelPropsUtils.setProps(context);
         GamePropsSpoofService.getInstance().applyPerAppSpoofFromContext(context);
         return app;
@@ -1384,6 +1387,7 @@ public class Instrumentation {
             ClassNotFoundException {
         Application app = (Application)clazz.newInstance();
         app.attach(context);
+        AdvancedAppSpoofUtils.setProps(context);
         PixelPropsUtils.setProps(context);
         GamePropsSpoofService.getInstance().applyPerAppSpoofFromContext(context);
         return app;
